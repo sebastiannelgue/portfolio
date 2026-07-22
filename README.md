@@ -25,8 +25,16 @@ Interfaz de una aplicación de gestión de una liga de baloncesto juvenil: landi
 - **Tecnologías:** React, Vite, JavaScript, Axios
 - **Destacados:** consumo de API REST, autenticación con JWT, ruteo con React Router y diseño responsive.
 
+### 📚 Metabuscador Bibliográfico con IA
+`./metabuscador-biblioteca`
+
+Herramienta web que unifica todo el material bibliográfico de la Biblioteca UADE (físico, digital y Open Access) en un solo buscador, para que los docentes armen la bibliografía de sus clases. Incluye un asistente de IA que recomienda bibliografía.
+
+- **Tecnologías:** HTML, CSS, JavaScript, Python (pandas, openpyxl)
+- **Destacados:** búsqueda unificada con puntaje de relevancia, filtros avanzados, procesamiento de ~186.000 registros y asistente de recomendación con IA.
+
 ---
 
 ## Tecnologías
 
-`HTML` · `CSS` · `JavaScript` · `React` · `Vite` · `Node.js` · `Git`
+`HTML` · `CSS` · `JavaScript` · `React` · `Vite` · `Node.js` · `Python` · `Git`

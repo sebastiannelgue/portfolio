@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sendero London Dry Gin — Un gin artesanal argentino nacido de la naturaleza. Botánicos seleccionados, receta propia, carácter único.">
+  <meta property="og:title" content="Sendero — London Dry Gin">
+  <meta property="og:description" content="El camino hacia lo extraordinario. Gin artesanal argentino, botánicos seleccionados y receta propia.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://senderogin.com.ar/">
+  <meta property="og:image" content="https://senderogin.com.ar/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sendero — London Dry Gin">
+  <meta name="twitter:description" content="Gin artesanal argentino. Donde cada sorbo es un sendero al alma.">
+  <meta name="twitter:image" content="https://senderogin.com.ar/assets/img/og-image.jpg">
+  <link rel="canonical" href="https://senderogin.com.ar/">
+  <title>Sendero — London Dry Gin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    "name": "Sendero London Dry Gin",
+    "url": "https://senderogin.com.ar/",
+    "logo": "https://senderogin.com.ar/assets/img/favicon.png",
+    "image": "https://senderogin.com.ar/assets/img/og-image.jpg",
+    "description": "Gin artesanal argentino. Botánicos seleccionados, receta propia y carácter único.",
+    "slogan": "Donde cada sorbo es un sendero al alma.",
+    "sameAs": ["https://instagram.com/senderogin"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===================== AGE GATE ===================== -->
+  <div id="age-gate" class="age-gate">
+    <div class="age-gate__inner">
+      <!-- Estado inicial: elección -->
+      <div class="age-gate__panel" id="ageMain">
+        <img src="assets/img/logo/mono-only-cream.png" alt="Sendero" class="age-gate__monogram">
+        <h2 class="age-gate__title">Bienvenido a Sendero</h2>
+        <p class="age-gate__text">Por favor confirmá que tenés 18 años o más para continuar.</p>
+        <div class="age-gate__buttons">
+          <button id="age-yes" class="btn btn--beige">Soy mayor de 18</button>
+          <button id="age-no" class="btn btn--ghost">Soy menor de edad</button>
+        </div>
+        <p class="age-gate__legal">Sendero promueve el consumo responsable.<br>Bebé con moderación.</p>
+      </div>
+
+      <!-- Estado bloqueado: menor de edad -->
+      <div class="age-gate__panel" id="ageDenied" hidden>
+        <img src="assets/img/logo/mono-only-cream.png" alt="Sendero" class="age-gate__monogram">
+        <h2 class="age-gate__title">Gracias por tu honestidad</h2>
+        <p class="age-gate__text">Sendero es una experiencia para mayores de 18 años.<br>¡Te esperamos pronto!</p>
+        <div class="age-gate__buttons">
+          <button id="age-back" class="btn btn--ghost">Me equivoqué, volver</button>
+        </div>
+        <p class="age-gate__legal">Sendero promueve el consumo responsable.<br>Bebé con moderación.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SCROLL PROGRESS ===================== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__container">
+      <a href="#inicio" class="navbar__logo" aria-label="Sendero — inicio">
+        <img src="assets/img/logo/lockup-gold.png" alt="Sendero London Dry Gin" class="navbar__logo-img">
+      </a>
+
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="#el-gin" class="navbar__link">El Gin</a></li>
+        <li><a href="#botanicos" class="navbar__link">Botánicos</a></li>
+        <li><a href="#cocteles" class="navbar__link">Cócteles</a></li>
+        <li><a href="#nosotros" class="navbar__link">Nosotros</a></li>
+        <li><a href="#contacto" class="navbar__link navbar__cta">Preventa</a></li>
+      </ul>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero__bg">
+        <picture>
+          <source srcset="assets/img/Pagina%201/hero-bg.webp" type="image/webp">
+          <img src="assets/img/Pagina 1/hero-bg.jpg" alt="Sendero London Dry Gin" class="hero__image" fetchpriority="high">
+        </picture>
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content">
+        <a href="#contacto" class="hero__badge fade-in-up" style="--delay:.1s"><span class="hero__badge-dot"></span>Primera preventa · cupo limitado</a>
+        <p class="hero__eyebrow fade-in-up" style="--delay:.2s">ARGENTINA</p>
+
+        <h1 class="hero__title fade-in-up" style="--delay:.7s">
+          <img src="assets/img/logo/word-cream.png" alt="SENDERO" class="hero__wordmark">
+        </h1>
+        <p class="hero__subtitle fade-in-up" style="--delay:.9s">LONDON DRY GIN</p>
+        <div class="hero__line fade-in" style="--delay:1.1s"></div>
+        <p class="hero__tagline fade-in-up" style="--delay:1.3s">Donde cada sorbo es un sendero al alma.</p>
+
+        <div class="hero__cta fade-in-up" style="--delay:1.5s">
+          <a href="#el-gin" class="btn btn--outline-white">Descubrí el Gin</a>
+          <a href="#contacto" class="btn btn--beige">Reservá el tuyo</a>
+        </div>
+      </div>
+
+      <a href="#el-gin" class="hero__scroll" aria-label="Scroll down">
+        <span class="hero__scroll-text">Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <div class="manifesto__pattern" aria-hidden="true"></div>
+      <div class="container">
+        <div class="manifesto__inner">
+          <span class="manifesto__mark reveal-up" aria-hidden="true">“</span>
+          <blockquote class="manifesto__quote reveal-up">
+            No hace falta una ocasión especial.<br class="br-desktop"> Alcanza con un buen gin, buena compañía<br class="br-desktop"> y ganas de quedarse un rato más.
+          </blockquote>
+          <span class="manifesto__mark manifesto__mark--close reveal-up" aria-hidden="true">”</span>
+          <p class="manifesto__author reveal-up">— Sendero, Argentina</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL GIN -->
+    <section id="el-gin" class="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__text">
+            <p class="section-label reveal-up">Nuestra Esencia</p>
+            <h2 class="section-title reveal-up">Un gin nacido<br><em>de la aventura</em></h2>
+            <div class="section-rule reveal-up"></div>
+            <p class="about__body reveal-up">
+              Una receta propia con nueve botánicos elegidos uno por uno: enebro, cítricos, especias y un toque fresco que lo vuelven distinto desde el primer sorbo.
+            </p>
+            <p class="about__body reveal-up">
+              Equilibrado y con carácter, va igual de bien solo con mucho hielo que en un buen gin tonic. Hecho en Argentina, sin apuro y sin atajos.
+            </p>
+            <div class="about__stats reveal-up">
+              <div class="stat-item">
+                <p class="stat-item__number"><span class="count" data-target="43">0</span>%</p>
+                <p class="stat-item__label">Vol. Alc.</p>
+              </div>
+              <div class="stat-item__sep"></div>
+              <div class="stat-item">
+                <p class="stat-item__number"><span class="count" data-target="9">0</span></p>
+                <p class="stat-item__label">Botánicos</p>
+              </div>
+              <div class="stat-item__sep"></div>
+              <div class="stat-item">
+                <p class="stat-item__number"><span class="count" data-target="700">0</span></p>
+                <p class="stat-item__label">ml</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__visual reveal-right">
+            <div class="about__image-wrap brand-panel">
+              <img src="assets/img/logo/mono-only-cream.png" alt="" class="brand-panel__emblem" loading="lazy">
+              <div class="about__seal-wrap">
+                <span class="wax-seal" aria-label="Sello de lacre Sendero" role="img">
+                  <img src="assets/img/compartidos/seal-wax.svg" alt="" class="wax-seal__wax" loading="lazy">
+                  <img src="assets/img/logo/mono-green.png" alt="" class="wax-seal__mono" loading="lazy">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTANICOS -->
+    <section id="botanicos" class="botanicals">
+      <div class="botanicals__bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-header section-header--left">
+          <p class="section-label section-label--light reveal-up">La receta</p>
+          <h2 class="section-title section-title--light reveal-up">Nueve botánicos,<br>un carácter propio</h2>
+          <p class="botanicals__intro reveal-up">Estos son algunos de los nueve botánicos que le dan vida a Sendero. Cuáles y en qué medida se combinan es lo que lo hace único —y lo que preferimos guardarnos.</p>
+        </header>
+
+        <div class="botanicals__grid">
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="20" r="10" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="28" r="7" stroke="currentColor" stroke-width="1.5"/><circle cx="30" cy="28" r="7" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="38" x2="24" y2="46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Enebro</h3>
+            <p class="botanical-card__latin">La base</p>
+            <p class="botanical-card__desc">El alma de todo gin. Le da las notas resinosas y de pino que lo hacen, sin discusión, un gin.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="2" x2="24" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="24" y1="34" x2="24" y2="46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 8 L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M30 30 L34 40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Coriandro</h3>
+            <p class="botanical-card__latin">El puente</p>
+            <p class="botanical-card__desc">Semilla de cítrico cálido y especiado. Redondea y une al resto de los aromas.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="24" cy="24" rx="8" ry="14" stroke="currentColor" stroke-width="1.5"/><path d="M8 24 Q16 16 24 24 Q32 32 40 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Raíz de angélica</h3>
+            <p class="botanical-card__latin">La estructura</p>
+            <p class="botanical-card__desc">Terrosa y seca, es la que sostiene todo y hace que el sabor perdure en el paladar.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4 C24 4 8 16 8 28 C8 38 15 44 24 44 C33 44 40 38 40 28 C40 16 24 4 24 4Z" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="4" x2="24" y2="44" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Cardamomo</h3>
+            <p class="botanical-card__latin">El carácter</p>
+            <p class="botanical-card__desc">El toque exótico. Especiado y aromático, suma profundidad y personalidad.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M16 20 Q20 16 24 20 Q28 24 32 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/><line x1="24" y1="10" x2="20" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Cítricos</h3>
+            <p class="botanical-card__latin">El brillo</p>
+            <p class="botanical-card__desc">Cáscaras secas de limón y naranja. Frescura y ese final que invita al próximo sorbo.</p>
+          </div>
+
+          <div class="botanical-card reveal-stagger">
+            <div class="botanical-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="24" y1="4" x2="24" y2="44" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M24 12 Q36 18 32 28 Q24 24 24 12" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M24 22 Q12 28 16 38 Q24 34 24 22" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </div>
+            <h3 class="botanical-card__name">Pepino y menta</h3>
+            <p class="botanical-card__latin">El toque fresco</p>
+            <p class="botanical-card__desc">Nuestro sello. Suavizan el conjunto y dejan una sensación limpia y liviana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA BOTELLA -->
+    <section id="la-botella" class="bottle">
+      <div class="container">
+        <div class="bottle__grid">
+          <div class="bottle__content reveal-left">
+            <p class="section-label reveal-up">El Producto</p>
+            <h2 class="section-title reveal-up">Diseñada para<br><em>perdurar</em></h2>
+            <div class="section-rule reveal-up"></div>
+            <p class="bottle__body reveal-up">
+              Una botella pensada desde el primer trazo. Forma premium, peso en mano, presencia en cualquier mesa. El diseño exterior habla antes de que lo haga el gin.
+            </p>
+            <p class="bottle__body reveal-up">
+              Vidrio transparente, etiqueta artesanal y el monograma Sendero en relieve. London Dry Gin, destilado en Argentina, con una receta propia de botánicos seleccionados.
+            </p>
+            <div class="bottle__specs reveal-up">
+              <div class="bottle-spec"><span class="bottle-spec__val">700</span><span class="bottle-spec__unit">ml</span></div>
+              <div class="bottle-spec"><span class="bottle-spec__val">43</span><span class="bottle-spec__unit">% vol.</span></div>
+              <div class="bottle-spec"><span class="bottle-spec__val">London</span><span class="bottle-spec__unit">Dry Gin</span></div>
+            </div>
+            <a href="#contacto" class="btn btn--primary reveal-up">Reservá el tuyo · $14.200</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EL MOMENTO PERFECTO -->
+    <section id="momento" class="serve">
+      <div class="serve__bg" aria-hidden="true"></div>
+      <div class="serve__scrim" aria-hidden="true"></div>
+      <div class="container">
+        <div class="serve__content reveal-up">
+          <p class="section-label section-label--light">El Ritual</p>
+          <h2 class="section-title section-title--light">El momento<br><em>perfecto</em></h2>
+          <div class="section-rule"></div>
+          <p class="serve__body">Nuestra forma favorita de tomarlo. Simple, bien frío, y con todos los botánicos apareciendo de a poco.</p>
+          <ul class="serve__steps">
+            <li><span class="serve__step-n">1</span> Copa o vaso con mucho hielo</li>
+            <li><span class="serve__step-n">2</span> 1 parte de Sendero Gin</li>
+            <li><span class="serve__step-n">3</span> 3 partes de tónica premium</li>
+            <li><span class="serve__step-n">4</span> Rodaja de limón y una rama de enebro</li>
+          </ul>
+          <p class="serve__tagline">“Donde cada sorbo es un sendero al alma.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COCTELES -->
+    <section id="cocteles" class="cocktails">
+      <div class="cocktails__bg" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-header section-header--left">
+          <p class="section-label section-label--light reveal-up">Cómo tomarlo</p>
+          <h2 class="section-title section-title--light reveal-up">Tres tragos<br>para probarlo</h2>
+          <p class="cocktails__intro reveal-up">Del clásico perfecto a la aventura en copa. Estas son nuestras formas favoritas de disfrutar Sendero.</p>
+        </header>
+
+        <div class="cocktails__grid">
+          <article class="cocktail-card reveal-stagger">
+            <div class="cocktail-card__number">01</div>
+            <div class="cocktail-card__content">
+              <h3 class="cocktail-card__name">Sendero &amp; Tonic</h3>
+              <p class="cocktail-card__desc">El clásico que nunca falla. Fresco, limpio y con todos los botánicos de Sendero en primer plano.</p>
+              <ul class="cocktail-card__ingredients">
+                <li>50 ml Sendero Gin</li>
+                <li>150 ml Tónica premium</li>
+                <li>Rodaja de limón o pepino</li>
+                <li>Mucho hielo</li>
+              </ul>
+              <p class="cocktail-card__method">Copa con hielo · Gin primero · Tónica en hilo · Garnish al gusto</p>
+            </div>
+          </article>
+
+          <article class="cocktail-card reveal-stagger">
+            <div class="cocktail-card__number">02</div>
+            <div class="cocktail-card__content">
+              <h3 class="cocktail-card__name">Gin &amp; Ginger</h3>
+              <p class="cocktail-card__desc">El más fácil y refrescante. Dos ingredientes, cero vueltas, listo en un minuto.</p>
+              <ul class="cocktail-card__ingredients">
+                <li>50 ml Sendero Gin</li>
+                <li>120 ml Ginger ale</li>
+                <li>Jugo de media lima</li>
+                <li>Mucho hielo</li>
+              </ul>
+              <p class="cocktail-card__method">Vaso largo con hielo · Gin y ginger · Exprimí la lima · Serví</p>
+            </div>
+          </article>
+
+          <article class="cocktail-card reveal-stagger">
+            <div class="cocktail-card__number">03</div>
+            <div class="cocktail-card__content">
+              <h3 class="cocktail-card__name">Negroni</h3>
+              <p class="cocktail-card__desc">El clásico italiano. Amargo y elegante, a prueba de todo: partes iguales, imposible errarle.</p>
+              <ul class="cocktail-card__ingredients">
+                <li>30 ml Sendero Gin</li>
+                <li>30 ml Campari</li>
+                <li>30 ml Vermut rojo</li>
+                <li>Twist de naranja</li>
+              </ul>
+              <p class="cocktail-card__method">Vaso bajo con hielo · Revolvé unos segundos · Twist de naranja</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENTOS / GALERÍA -->
+    <section id="momentos" class="gallery">
+      <div class="container">
+        <header class="section-header section-header--left">
+          <p class="section-label reveal-up">Momentos</p>
+          <h2 class="section-title reveal-up">Para <em>compartir</em></h2>
+          <p class="gallery__intro reveal-up">Sendero es de tomar acompañado. Un brindis, una charla que se estira, y esa sensación de que la estás pasando bien.</p>
+        </header>
+        <div class="gallery__grid">
+          <figure class="gallery__item reveal-stagger">
+            <picture>
+              <source srcset="assets/img/Pagina%208/momento-1.webp" type="image/webp">
+              <img src="assets/img/Pagina 8/momento-1.jpg" alt="Gin tonic Sendero servido en copa" loading="lazy">
+            </picture>
+          </figure>
+          <figure class="gallery__item reveal-stagger">
+            <picture>
+              <source srcset="assets/img/Pagina%208/momento-2.webp" type="image/webp">
+              <img src="assets/img/Pagina 8/momento-2.jpg" alt="Brindis con gin tonic Sendero" loading="lazy">
+            </picture>
+          </figure>
+          <figure class="gallery__item reveal-stagger">
+            <picture>
+              <source srcset="assets/img/Pagina%208/momento-3.webp" type="image/webp">
+              <img src="assets/img/Pagina 8/momento-3.jpg" alt="Gin tonic Sendero con botánicos frescos" loading="lazy">
+            </picture>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUESTRA HISTORIA -->
+    <section id="nosotros" class="story">
+      <div class="container">
+        <div class="story__grid">
+          <div class="story__visual reveal-left">
+            <div class="story__image-wrap brand-panel brand-panel--cream">
+              <img src="assets/img/logo/mono-green.png" alt="" class="brand-panel__emblem" loading="lazy">
+              <div class="story__seal-wrap reveal-up">
+                <span class="wax-seal" aria-label="Sello de lacre Sendero" role="img">
+                  <img src="assets/img/compartidos/seal-wax.svg" alt="" class="wax-seal__wax" loading="lazy">
+                  <img src="assets/img/logo/mono-green.png" alt="" class="wax-seal__mono" loading="lazy">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="story__content">
+            <p class="section-label reveal-up">Quiénes somos</p>
+            <h2 class="section-title reveal-up">Dos amigos,<br>un gin</h2>
+            <div class="section-rule reveal-up"></div>
+            <p class="story__body reveal-up">
+              Sendero empezó como empieza casi todo lo bueno: entre amigos y con una copa en la mano. Dos fanáticos del gin, cansados de tomar siempre lo mismo, con una idea que no nos dejaba en paz —hacer el nuestro.
+            </p>
+            <p class="story__body reveal-up">
+              No buscábamos un gin más. Queríamos un sabor nuevo, con carácter, que se sintiera distinto desde el primer sorbo. Así que nos pusimos a probar: mezclar, ajustar, volver a empezar, hasta dar con el equilibrio justo.
+            </p>
+            <p class="story__body reveal-up">
+              Lo llamamos Sendero porque eso fue: una aventura, un camino que armamos nosotros. Hoy lo compartimos con vos —en cada botella están esas ganas de hacer algo distinto, y bien hecho.
+            </p>
+            <div class="story__tags reveal-up">
+              <span class="story__tag">Argentina</span>
+              <span class="story__tag">Artesanal</span>
+              <span class="story__tag">Receta propia</span>
+              <span class="story__tag">Aventura</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO / COMPRAR -->
+    <section id="contacto" class="contact">
+      <div class="contact__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="contact__inner">
+          <p class="section-label section-label--light reveal-up">Primera preventa</p>
+          <h2 class="section-title section-title--light reveal-up">Reservá tu<br><em>Sendero</em></h2>
+          <p class="contact__intro reveal-up">Sé de los primeros. Abrimos la preventa de la primera tanda —unidades limitadas— antes del lanzamiento de la semana que viene.</p>
+
+          <div class="presale reveal-up">
+            <span class="presale__label">Precio de preventa</span>
+            <span class="presale__amount">$14.200</span>
+            <span class="presale__after">Después <s>$17.800</s></span>
+          </div>
+          <p class="presale__note reveal-up">Dejá tus datos y te escribimos por mail para coordinar el pago y la entrega. Si preferís, también podés reservar por Instagram.</p>
+
+          <form class="contact__form reveal-up" id="contactForm"
+                action="https://formsubmit.co/1d67d775e00b66cc9e39b44c87b1a8bb" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Nueva reserva de preventa — Sendero Gin">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="¡Gracias por sumarte a la primera preventa de Sendero!
+
+Recibimos tu reserva. En breve te vamos a escribir para coordinar el pago y la entrega.
+
+Sos de los primeros en tener nuestro London Dry Gin: una receta propia, pensada para compartir.
+
+¡Nos vemos pronto!
+
+Equipo de Sendero Gin">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="nombre" class="form__label">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Tu nombre"
+                       required aria-describedby="nombreError" autocomplete="given-name">
+                <span class="form__field-error" id="nombreError" role="alert"></span>
+              </div>
+              <div class="form__group">
+                <label for="email" class="form__label">Email</label>
+                <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com"
+                       required pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}"
+                       title="Ingresá un email válido, por ejemplo nombre@gmail.com"
+                       aria-describedby="emailError" autocomplete="email">
+                <span class="form__field-error" id="emailError" role="alert"></span>
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="cantidad" class="form__label">¿Cuántas botellas querés reservar?</label>
+              <select id="cantidad" name="cantidad" class="form__input form__select" required>
+                <option value="1 botella">1 botella</option>
+                <option value="2 botellas">2 botellas</option>
+                <option value="3 botellas">3 botellas</option>
+                <option value="6 botellas (caja)">6 botellas (caja)</option>
+                <option value="Más de 6 / consulta">Más de 6 / consulta</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="mensaje" class="form__label">Comentario <span class="form__optional">(opcional)</span></label>
+              <textarea id="mensaje" name="mensaje" class="form__textarea" placeholder="¿Alguna consulta o pedido especial?" rows="3"
+                        aria-describedby="mensajeError"></textarea>
+              <span class="form__field-error" id="mensajeError" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn--beige form__submit">Reservar mi Sendero</button>
+            <p class="form__success" id="formSuccess">¡Reserva enviada! Te escribimos por mail para coordinar el pago y la entrega.</p>
+            <p class="form__error" id="formError">No se pudo enviar. Escribinos directo a <a href="mailto:senderogin@gmail.com">senderogin@gmail.com</a>.</p>
+          </form>
+
+          <p class="presale__or reveal-up">o si preferís</p>
+          <a href="https://instagram.com/senderogin" target="_blank" rel="noopener" class="btn btn--outline-white presale__ig reveal-up">Reservá por Instagram</a>
+
+          <div class="contact__social reveal-up">
+            <p class="contact__social-label">Seguinos</p>
+            <div class="contact__social-links">
+              <a href="https://instagram.com/senderogin" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="5"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+                @senderogin
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/img/logo/vert-gold.png" alt="Sendero London Dry Gin" class="footer__logo">
+          <p class="footer__tagline">London Dry Gin · Argentina</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <p class="footer__nav-title">Navegar</p>
+          <ul>
+            <li><a href="#el-gin">El Gin</a></li>
+            <li><a href="#botanicos">Botánicos</a></li>
+            <li><a href="#cocteles">Cócteles</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Preventa</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__info">
+          <p class="footer__nav-title">Contacto</p>
+          <p><a href="mailto:senderogin@gmail.com">senderogin@gmail.com</a></p>
+          <p>Argentina</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/senderogin" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">Beber con moderación. Prohibida la venta a menores de 18 años.</p>
+        <p class="footer__copy">© <span id="footerYear">2025</span> Sendero London Dry Gin. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

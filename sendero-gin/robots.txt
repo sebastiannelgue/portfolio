@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://senderogin.com.ar/sitemap.xml

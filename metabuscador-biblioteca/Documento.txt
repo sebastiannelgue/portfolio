@@ -1,0 +1,173 @@
+=====================================================================
+   METABUSCADOR BIBLIOGRÁFICO CON IA — GUÍA DE USO
+   UADE · Biblioteca
+=====================================================================
+
+¿QUÉ ES ESTO?
+-------------
+Este sistema tiene dos partes:
+  1. Un metabuscador web (la página) donde los usuarios buscan libros.
+  2. Un bot de IA (ChatGPT) que recomienda bibliografía de forma inteligente.
+
+Ambas partes usan los mismos datos, pero en formatos distintos.
+Esta guía explica qué hace cada archivo y cuándo hay que usarlo.
+
+
+=====================================================================
+ARCHIVOS DEL PROYECTO
+=====================================================================
+
+📄 Main.html
+------------
+Es la página web del metabuscador. La que ven los usuarios.
+No hace falta tocarla salvo que se quiera cambiar el diseño o el texto.
+
+📄 styles.css
+-------------
+Controla los colores, tipografías y el aspecto visual de la página.
+No hace falta tocarlo salvo cambios de diseño.
+
+📄 script.js
+------------
+Es el "motor" del metabuscador. Hace que la búsqueda funcione,
+aplica los filtros (físico, digital, open access, año, idioma, etc.)
+y muestra los resultados en pantalla.
+No hace falta tocarlo salvo cambios de funcionalidad.
+
+
+=====================================================================
+IMÁGENES
+=====================================================================
+
+🖼️ LOGO.png       → Logo de UADE que aparece en el encabezado.
+🖼️ copy.png       → Ícono del botón "Copiar" en el detalle del libro.
+🖼️ fav.png        → Ícono del botón "Favoritos".
+🖼️ gpt.png        → Ícono del botón "Utilizar IA".
+🖼️ delete.png     → Ícono para eliminar de favoritos.
+
+
+=====================================================================
+ARCHIVOS DE DATOS (los que alimentan el metabuscador)
+=====================================================================
+
+Estos dos archivos los usa la PÁGINA WEB para mostrar resultados.
+Se generan automáticamente con script.py (ver más abajo).
+NO se deben editar a mano.
+
+📋 search_fisico.json
+---------------------
+Contiene todos los libros FÍSICOS disponibles en la biblioteca UADE.
+
+📋 search_digital.json
+----------------------
+Contiene todos los libros DIGITALES (eBooks) y libros Open Access
+disponibles. Ambos tipos se generan juntos desde script.py.
+
+
+=====================================================================
+SCRIPTS (programas que procesan los datos)
+=====================================================================
+
+Estos archivos son programas de Python. Se ejecutan desde la terminal
+con el comando:   python nombre_del_script.py
+
+----------------------------------------------------------------------
+
+🐍 script.py  →  PASO 1: Procesar el catálogo completo
+----------------------------------------------------------------------
+¿Cuándo usarlo?
+  Cada vez que se actualice Base.Bibliografica.Items.xlsx o el CSV
+  de Open Access. Este script hace todo junto en un solo paso.
+
+¿Qué hace?
+  1. Lee el Excel con todo el catálogo bibliográfico de UADE
+     (incluye físicos, digitales, y las plataformas Cátedra,
+     Hammurabi y CP67).
+  2. Lee el archivo repository-export.csv (Open Access de OAPEN),
+     filtra solo los títulos en español, y los suma a los digitales.
+  3. Genera los dos archivos para el metabuscador:
+       → search_fisico.json
+       → search_digital.json  (incluye Open Access)
+
+¿Cómo usarlo?
+  1. Asegurarse de tener en la misma carpeta:
+       - Base.Bibliografica.Items.xlsx  (catálogo UADE)
+       - repository-export.csv          (descargado de https://library.oapen.org)
+  2. Abrir la terminal en esa carpeta.
+  3. Ejecutar:   python script.py
+  4. Subir search_fisico.json y search_digital.json al servidor web.
+
+  Nota: si no está el CSV de Open Access, el script igual funciona
+  y genera los JSONs solo con el catálogo de UADE.
+
+----------------------------------------------------------------------
+
+🐍 scriptSE.py  →  PASO 2: Generar los archivos para el bot de IA
+----------------------------------------------------------------------
+¿Cuándo usarlo?
+  Después de ejecutar script.py, cuando se quiera actualizar
+  los archivos que usa el bot de ChatGPT.
+
+¿Qué hace?
+  Toma los dos JSONs del metabuscador, los procesa y los divide
+  en 20 archivos listos para cargar al bot:
+    → bot_fisico_parte_1.json  ... bot_fisico_parte_6.json   (6 archivos)
+    → bot_digital_parte_1.json ... bot_digital_parte_14.json (14 archivos)
+
+  Los Open Access quedan incluidos dentro de los archivos digitales,
+  con disponibilidad "Open Access".
+
+¿Cómo usarlo?
+  1. Asegurarse de tener en la carpeta:
+       - search_fisico.json
+       - search_digital.json
+  2. Ejecutar:   python scriptSE.py
+  3. Subir los 20 archivos bot_*.json al bot de ChatGPT,
+     reemplazando los anteriores.
+
+----------------------------------------------------------------------
+
+📋 Base.Bibliografica.Items.xlsx
+----------------------------------------------------------------------
+Es el catálogo completo de la biblioteca UADE en formato Excel.
+Lo procesa script.py para generar los JSONs del metabuscador.
+Se actualiza desde el sistema de gestión de la biblioteca.
+
+📋 repository-export.csv
+----------------------------------------------------------------------
+Es el catálogo de libros Open Access descargado desde OAPEN.
+Lo procesa script.py junto con el Excel en un solo paso.
+Se puede descargar actualizado desde: https://library.oapen.org
+
+
+=====================================================================
+FLUJO DE TRABAJO COMPLETO
+=====================================================================
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │  ¿Se actualizó el catálogo de UADE o los Open Access?       │
+  │    → Ejecutar script.py                                      │
+  │    → Subir search_fisico.json y search_digital.json al web   │
+  └─────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │  ¿Se quiere actualizar el bot de IA?                         │
+  │    → Ejecutar scriptSE.py                                    │
+  │    → Subir los 20 archivos bot_*.json al bot de ChatGPT      │
+  └─────────────────────────────────────────────────────────────┘
+
+
+=====================================================================
+REQUISITOS TÉCNICOS
+=====================================================================
+
+Para ejecutar los scripts de Python se necesita tener instalado:
+  - Python 3.8 o superior
+  - Las librerías: pandas, openpyxl
+
+Para instalarlas, ejecutar en la terminal:
+  pip install pandas openpyxl
+
+
+=====================================================================
+Sebastián Elgue
